@@ -9,6 +9,9 @@ export const useCountStore = defineStore('CountStore', {
         increment() {
             this.count++
         },
+        minus() {
+            this.count--
+        },
     },
 });
 
