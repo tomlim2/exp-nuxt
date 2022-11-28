@@ -1,17 +1,11 @@
 <template>
     <div>
-        <h1>spotify page</h1>
-        <SectionsSporifyLogin/>
+      redirect page
     </div>
-    
 </template>
 
 <script setup>
 definePageMeta({
     layout: "custom",
 });
-
-onMounted(()=>{
-    
-})
 </script>
