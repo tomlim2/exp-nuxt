@@ -7,10 +7,6 @@
 </template>
 
 <script setup>
-definePageMeta({
-    layout: "custom",
-});
-
 onMounted(()=>{
     
 })

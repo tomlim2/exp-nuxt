@@ -1,5 +1,5 @@
 <template>
-    <NuxtLink class="link" :to="pathName">
+    <NuxtLink class="link" :class="[className]" :to="pathName">
         <slot />
     </NuxtLink>
 </template>
@@ -7,8 +7,11 @@
 <script setup>
 const props = defineProps({
     pathName: {
-        type: Number,
+        type: String,
     },
+    className: {
+        type: String
+    }
 })
 </script>
 
@@ -16,13 +19,23 @@ const props = defineProps({
 .link {
     padding: 8px 12px;
     border-radius: 4px;
-    background-color: #252525;
+    background-color: #151515;
     color: #fff;
-    cursor: pointer;
+
     transition: ease-in-out 80ms background-color;
+    cursor: pointer;
+
+    &.signined-spotify {
+        background-color: #1db954;
+
+        &:hover{
+            color: #000;
+            background-color: #1ed760;
+        }
+    }
 
     &:hover {
-        background-color: #151515;
+        background-color: #252525;        
     }
 }
 </style>
