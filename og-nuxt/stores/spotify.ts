@@ -17,9 +17,10 @@ export const spotifyStore = defineStore('account', {
             this.accessToken = String(accessToken)
             window.localStorage.setItem(key, accessToken);
         },
-        removeAccessToken() {
+        signout() {
             this.accessToken = undefined
-            window.localStorage.removeItem(key);
+            this.userInfo = undefined
+            window.localStorage.removeItem(key)
         },
     },
 })

@@ -1,7 +1,6 @@
 <template>
     <div>
       <Header />
-      A *default* layout
       <slot />
     </div>
 </template>
@@ -17,7 +16,6 @@ const getUserInfo = async () => {
 
 onMounted(()=>{
   const hasAccessToken = Boolean(model.spotify.setAccessToken())
-  console.log(hasAccessToken);
   if(hasAccessToken){
     getUserInfo()
   }

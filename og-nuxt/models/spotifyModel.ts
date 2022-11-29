@@ -30,7 +30,7 @@ export default class SpotifyModel {
             const response = await Axios.get(this.baseUrl + path, this.setHeader())    
             return response.data
         } catch (error) {
-            this.store.spotify.removeAccessToken()
+            this.store.spotify.signout()
         }
         
         
@@ -40,6 +40,10 @@ export default class SpotifyModel {
         const url = `${authEndPoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join("%20")}&response_type=token&show_dialog=true`
         return window.location.replace(url);
     } 
+
+    signout = () => {
+        return this.store.spotify.signout()
+    }
 
     getUserInfo = async () => {        
         const result = await this.GET('me');

@@ -1,8 +1,16 @@
 <template>
-    <button class="basic">
+    <button class="basic" :disabled="disabled">
         <slot />
     </button>
 </template>
+
+<script setup>
+const props = defineProps({
+    disabled: {
+        type: Boolean,
+    },
+})
+</script>
 
 <style lang="scss" scoped>
     .basic {
@@ -15,6 +23,11 @@
 
         &:hover{
             background-color: #151515;
+        }
+
+        &:disabled{
+            opacity: .5;
+            pointer-events: none;
         }
     }
 </style>

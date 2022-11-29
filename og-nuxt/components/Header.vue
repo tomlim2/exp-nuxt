@@ -7,10 +7,10 @@
                     <ButtonsLink pathName="/todo">Todo</ButtonsLink>
                 </li>
                 <li class="menu">
-                    <ButtonsLink pathName="/spotify" :className="state.isSpotifySignin ? 'signined-spotify' : ''">Spotify</ButtonsLink>
+                    <ButtonsLink pathName="/spotify" :className="state.isSpotifySignined ? 'signined-spotify' : ''">Spotify</ButtonsLink>
                 </li>
             </ul>
-            <UserProfile v-if="state.isSpotifySignin" :imgUrl="state.userInfo.images[0].url" />
+            <UserProfile :imgUrl="state.isSpotifySignined ? state.userInfo.images[0].url : ''" />
         </nav>
     </header>
 </template>
@@ -23,7 +23,7 @@ const store = useStore()
 const router = useRouter()
 
 const state = reactive({
-    isSpotifySignin: computed(() => store.spotify.isSignin),
+    isSpotifySignined: computed(() => store.spotify.isSignin),
     userInfo: computed(() => store.spotify.userInfo),
 })
 
@@ -36,19 +36,21 @@ const navigateTo = (pathName) => {
 
 <style lang="scss">
 .header {
+    position: fixed;
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 4px;
+    padding: 16px;
 
     .nav {
         display: flex;
         align-items: center;
-        gap: 4px;
+        gap: 8px;
 
         .menus {
             display: flex;
-            gap: 4px;
+            gap: 8px;
         }
     }
 }
