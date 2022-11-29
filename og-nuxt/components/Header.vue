@@ -1,6 +1,8 @@
 <template>
     <header class="header">
-        <SvgsLogo @click="navigateTo('/')" :size='36' color='#000' />
+        <div class="logo">
+            <SvgsLogo @click="navigateTo('/')" :size='36' color='#fff' />
+        </div>
         <nav class="nav">
             <ul class="menus">
                 <li class="menu">
@@ -18,7 +20,6 @@
 <script setup>
 import { useStore } from '~~/stores';
 
-
 const store = useStore()
 const router = useRouter()
 
@@ -30,20 +31,23 @@ const state = reactive({
 const navigateTo = (pathName) => {
     router.push(pathName)
 }
-
-
 </script>
 
 <style lang="scss">
-.header {
-    position: fixed;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px;
-
+.header {    
+    .logo{
+        position: fixed;
+        top: 16px;
+        left: 16px;
+        mix-blend-mode: exclusion;
+    }
+    
     .nav {
+        position: fixed;
+        top: 16px;
+        right: 16px;
+        display: flex;
+        align-items: center;
         display: flex;
         align-items: center;
         gap: 8px;

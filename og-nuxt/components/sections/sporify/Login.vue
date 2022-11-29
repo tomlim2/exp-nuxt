@@ -48,5 +48,6 @@ const signout = () => {
     width: 100vw;
     height: 100vh;
     gap: 10px;
+    background-color: #fff;
 }
 </style>

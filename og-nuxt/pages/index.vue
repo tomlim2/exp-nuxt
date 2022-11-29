@@ -1,5 +1,9 @@
 <template>
-    <h1>Index page</h1>
+    <div class="main">
+        <SectionsEmpty :backgroundColor="'#000'" />
+        <SectionsEmpty :backgroundColor="'#fff'" />
+        <SectionsEmpty :backgroundColor="'#000'" />
+    </div>
 </template>
 
 <script setup>
