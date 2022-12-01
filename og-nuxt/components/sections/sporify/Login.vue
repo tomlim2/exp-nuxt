@@ -21,6 +21,10 @@ const state = reactive({
     userInfo: computed(() => store.spotify.userInfo),
 })
 
+useHead({
+    title: `Spotify ${state.isSpotifySignined ? "Signined" : 'Need to sigin'}`
+})
+
 const model = useModel()
 const signinToSpotify = () => {
     const authEndPoint = config.spotify.authEndPoint

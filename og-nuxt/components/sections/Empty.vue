@@ -15,11 +15,6 @@ const props = defineProps({
         default: '#000'
     }
 })
-
-definePageMeta({
-    layout: "default",
-});
-
 onMounted(()=>{
     
 })
