@@ -1,5 +1,5 @@
 <template>
-    <NuxtLink class="link" :class="[className]" :to="pathName">
+    <NuxtLink class="link" :class="[className, {disabled:isDisabled}]" :to="pathName">
         <slot />
     </NuxtLink>
 </template>
@@ -11,6 +11,9 @@ const props = defineProps({
     },
     className: {
         type: String
+    },
+    isDisabled:{
+        type: Boolean
     }
 })
 </script>
@@ -36,6 +39,11 @@ const props = defineProps({
 
     &:hover {
         background-color: #252525;        
+    }
+
+    &.disabled{
+        opacity: .5;
+        pointer-events: none;
     }
 }
 </style>

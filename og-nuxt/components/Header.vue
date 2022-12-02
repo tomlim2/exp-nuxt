@@ -5,6 +5,7 @@
         </div>
         <nav class="nav">
             <ul class="menus">
+                <li class="menu"><ButtonsLink pathName="/examples">Nuxt Examples</ButtonsLink></li>
                 <li class="menu">
                     <ButtonsLink pathName="/todo">Todo</ButtonsLink>
                 </li>

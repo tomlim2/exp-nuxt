@@ -2,7 +2,6 @@
     <div>
         <SectionsSporifyLogin/>
     </div>
-    
 </template>
 
 <script setup>

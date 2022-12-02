@@ -7,7 +7,6 @@
             Logout
         </ButtonsBasic>
     </div>
-
 </template>
 
 <script setup>
