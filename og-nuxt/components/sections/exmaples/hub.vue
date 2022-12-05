@@ -7,7 +7,7 @@
             <ButtonsLink pathName="/examples/middleware">
                 Middleware
             </ButtonsLink>
-            <ButtonsLink pathName="/examples/page-transition">
+            <ButtonsLink pathName="/examples/page-transition/1">
                 Page Transition
             </ButtonsLink>
         </div>

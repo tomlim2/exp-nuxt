@@ -13,7 +13,6 @@ const getUserInfo = async () => {
   await model.spotify.getUserInfo()
 }
 
-
 onMounted(()=>{
   const hasAccessToken = Boolean(model.spotify.setAccessToken())
   if(hasAccessToken){

@@ -29,7 +29,6 @@ const cssOptions = {
 export default defineNuxtConfig({
     app: {
         head,
-        pageTransition: { name: 'page', mode: 'out-in' }
     },
     runtimeConfig: {
         public: {
