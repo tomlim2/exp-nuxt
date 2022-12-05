@@ -1,3 +1,19 @@
+<script setup>
+import { useStore } from '~~/stores';
+
+const store = useStore()
+const router = useRouter()
+
+const state = reactive({
+    isSpotifySignined: computed(() => store.spotify.isSignin),
+    userInfo: computed(() => store.spotify.userInfo),
+})
+
+const navigateTo = (pathName) => {
+    router.push(pathName)
+}
+</script>
+
 <template>
     <header class="header">
         <div class="logo">
@@ -18,21 +34,7 @@
     </header>
 </template>
 
-<script setup>
-import { useStore } from '~~/stores';
 
-const store = useStore()
-const router = useRouter()
-
-const state = reactive({
-    isSpotifySignined: computed(() => store.spotify.isSignin),
-    userInfo: computed(() => store.spotify.userInfo),
-})
-
-const navigateTo = (pathName) => {
-    router.push(pathName)
-}
-</script>
 
 <style lang="scss">
 .header {    
@@ -41,6 +43,7 @@ const navigateTo = (pathName) => {
         top: 16px;
         left: 16px;
         mix-blend-mode: exclusion;
+        z-index: 9999;
     }
     
     .nav {
@@ -52,6 +55,7 @@ const navigateTo = (pathName) => {
         display: flex;
         align-items: center;
         gap: 8px;
+        z-index: 9999;
 
         .menus {
             display: flex;

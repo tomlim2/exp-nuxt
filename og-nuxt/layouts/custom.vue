@@ -5,19 +5,23 @@ const prev = computed(() => '/examples/page-transition/' + (id.value - 1))
 const next = computed(() => '/examples/page-transition/' + (id.value + 1))
 </script>
 <template>
-  <div class="custom">
+  <NuxtLayout name="default">
     <slot />
-    <div v-if="$route.params.id">
-      <NuxtLink :to="prev">⬅️</NuxtLink> |
-      <NuxtLink :to="next">➡️</NuxtLink>
+    <div class="links" v-if="$route.params.id">
+      <ButtonsLink :pathName="prev">Prev</ButtonsLink> |
+      <ButtonsLink :pathName="next">Next</ButtonsLink>
     </div>
-  </div>
+  </NuxtLayout>
 </template>
 
-<style scoped>
-  .custom{
-    width: 100vw;
-    height: 100vh;
-    background-color: beige;
-  }
+<style lang="scss" scoped>
+.links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: fixed;
+  left: 50%;
+  bottom: 32px;
+  transform: translateX(-50%);
+}
 </style>

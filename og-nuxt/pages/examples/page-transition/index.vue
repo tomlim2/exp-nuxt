@@ -1,10 +1,10 @@
 <template>
     <div class="page-transition main">
-        <transition name="home">
-            <div class="content">
-                <h2>Page Transition</h2>
-            </div>
-        </transition>
+        <div class="content">
+            <h2>Page Transition</h2>
+            <router-view/>
+            <slot/>
+        </div>
     </div>
 </template>
 

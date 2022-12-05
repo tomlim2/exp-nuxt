@@ -40,6 +40,10 @@ const navigateTo = (pathName) => {
     
     .word{
         color: #fff;
+        font-size: 20rem;
+        line-height: 0.9;
+        text-align: center;
+        text-transform: capitalize;
         mix-blend-mode: exclusion;
     }
 }

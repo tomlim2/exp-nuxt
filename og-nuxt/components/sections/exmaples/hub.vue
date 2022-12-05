@@ -21,7 +21,7 @@
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    background-color: #fff;
+    background-color: #000;
 
     .links{
         display: flex;

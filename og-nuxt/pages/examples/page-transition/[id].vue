@@ -1,23 +1,25 @@
 <script setup lang="ts">
 definePageMeta({
-    layout:'custom',
-  pageTransition: {
-    name: 'slide-right',
-    mode: 'out-in'
-  },
-  middleware (to, from) {
-    const prevId = Number(from.params.id)
-    const nowId = Number(to.params.id)
-    const transitionDirection = (nowId - prevId) == 1 ? 'slide-left' : 'slide-right'
-    
-    //@ts-ignore
-    to.meta.pageTransition.name = transitionDirection
-  }
+    layout: 'custom',
+    pageTransition: {
+        name: 'slide-right',
+        mode: 'out-in'
+    },
+    middleware(to, from) {
+        const prevId = Number(from.params.id)
+        const nowId = Number(to.params.id)
+        const transitionDirection = (nowId - prevId) == 1 ? 'slide-left' : 'slide-right'
+
+        //@ts-ignore
+        to.meta.pageTransition.name = transitionDirection
+    }
 })
 </script>
 
 <template>
-    <h1>#{{ $route.params.id }}</h1>
+    <div class="transition-sample">
+        <SectionsExmaplesPageTransitionInfos/>
+    </div>
 </template>
 
 <style>
